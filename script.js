@@ -32,17 +32,3 @@ newDomelement.selectorCreate();
 
 const newDomelement2 = new DomElement("#green_home", "100px", "900px", "green", "70px");
 newDomelement2.selectorCreate();
-
-// newDomelement.selector = ".yellow_home";
-// newDomelement.bg = "yellow";
-// newDomelement.height = "50px";
-// newDomelement.selectorCreate();
-// console.log(newDomelement);
-
-// const newDomelement2 = Object.create(DomElement);
-
-// newDomelement2.selector = "#green_home";
-// newDomelement2.bg = "green";
-// newDomelement2.fontSize = "70px";
-// newDomelement2.selectorCreate();
-// console.log(newDomelement2);
