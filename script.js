@@ -1,12 +1,12 @@
 'use strict';
 
-const DomElement = {
-    selector: "",
-    height: "300px",
-    width: "500px",
-    bg: "white",
-    fontSize: "50px",
-    selectorCreate: function () {
+const DomElement = function (selector, height, width, bg, fontSize) {
+    this.selector = selector;
+    this.height = height;
+    this.width = width;
+    this.bg = bg;
+    this.fontSize = fontSize;
+    this.selectorCreate = function () {
         let bgColour = "background-color:" + this.bg + ";height:" + this.height + ";width:" + this.width + ";font-size:" + this.fontSize;
 
         if (this.selector.charAt(0) === ".") {
@@ -24,21 +24,25 @@ const DomElement = {
             newParagraph.style.cssText = paragraphStyle;
             newParagraph.style.cssText = bgColour;
         }
-    }
+    };
 };
 
-const newDomelement = Object.create(DomElement);
-
-newDomelement.selector = ".yellow_home";
-newDomelement.bg = "yellow";
-newDomelement.height = "50px";
+const newDomelement = new DomElement(".yellow_home", "50px", "500px", "yellow", "50px");
 newDomelement.selectorCreate();
-console.log(newDomelement);
 
-const newDomelement2 = Object.create(DomElement);
-
-newDomelement2.selector = "#green_home";
-newDomelement2.bg = "green";
-newDomelement2.fontSize = "70px";
+const newDomelement2 = new DomElement("#green_home", "100px", "900px", "green", "70px");
 newDomelement2.selectorCreate();
-console.log(newDomelement2);
+
+// newDomelement.selector = ".yellow_home";
+// newDomelement.bg = "yellow";
+// newDomelement.height = "50px";
+// newDomelement.selectorCreate();
+// console.log(newDomelement);
+
+// const newDomelement2 = Object.create(DomElement);
+
+// newDomelement2.selector = "#green_home";
+// newDomelement2.bg = "green";
+// newDomelement2.fontSize = "70px";
+// newDomelement2.selectorCreate();
+// console.log(newDomelement2);
