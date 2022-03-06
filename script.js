@@ -36,34 +36,36 @@ const DomElement = function (selector, height, width, bg, fontSize, position = "
 const newDomelement2 = new DomElement("#green_home", "100px", "700px", "green", "70px");
 const square = new DomElement(".yellow_home", "100px", "100px", "yellow", "25px");
 
+const moveElement = (event) => {
+
+    switch(event.code) {
+        case "ArrowUp":
+            squareElement.style.top = (parseInt(squareElement.style.top) - 10) + "px";
+            break;
+        case "ArrowDown":
+            squareElement.style.top = (parseInt(squareElement.style.top) + 10) + "px";
+            break;
+        case "ArrowLeft":
+            squareElement.style.left = (parseInt(squareElement.style.left) - 10) + "px";
+            break; 
+        case "ArrowRight":
+            squareElement.style.left = (parseInt(squareElement.style.left) + 10) + "px";
+            break;       
+    }
+};
+
 newDomelement2.selectorCreate();
 
 document.addEventListener("DOMContentLoaded", square.selectorCreate());
 
-window.addEventListener("keydown", (event) => {
-    const squareElement = document.querySelector(square.selector);
-    let step = 10;
+const squareElement = document.querySelector(square.selector);
 
-    switch(event.code) {
-        case "ArrowUp":
-            console.log("I will move up");
-            // squareElement.style.top += step;
-            step = step + 10;
-            console.log(step);
-            break;
-        case "ArrowDown":
-            console.log("I will move down");
-            break;
-        case "ArrowLeft":
-            console.log("I will move left");
-            break; 
-        case "ArrowRight":
-            console.log("I will move right");
-            break;       
-    }
-});
+squareElement.style.top = "10px";
+squareElement.style.left = "10px";
 
-square.top = "10px";
+window.addEventListener("keydown", moveElement); 
+
+
 
 
 
